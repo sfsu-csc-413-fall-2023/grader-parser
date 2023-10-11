@@ -48,19 +48,19 @@ public class ParserOutputTest {
       "5:        Iteration                    ",
       "6:          Range                      ",
       "7:            Int: 1                   ",
-      "8:            Int: 5",
-      "9:          Block",
-      "10:           If",
-      "12:             RelOp: ==",
-      "11:               Identifier: i",
-      "13:               Int: 0",
-      "14:             Block",
-      "15:               Assignment",
-      "16:                 Identifier: i",
-      "18:                 Call",
+      "8:            Int: 5                   ",
+      "9:          Block                      ",
+      "10:           If                       ",
+      "12:             RelOp: ==              ",
+      "11:               Identifier: i        ",
+      "13:               Int: 0               ",
+      "14:             Block                  ",
+      "15:               Assignment           ",
+      "16:                 Identifier: i      ",
+      "18:                 Call               ",
       "17:                   Identifier: write",
-      "19:                   ActualArguments",
-      "20:                     Identifier: i");
+      "19:                   ActualArguments  ",
+      "20:                     Identifier: i  ");
 
   @Test
   public void testParserOutput() throws IOException {
