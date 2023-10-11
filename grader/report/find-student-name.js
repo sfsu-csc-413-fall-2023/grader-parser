@@ -1,6 +1,6 @@
 /**
  * @param {string} directory
- * @param {Array<string>} lines 
+ * @param {Array<string>} lines
  * @returns string
  */
 const findStudentName = (directory, lines) => {
@@ -20,7 +20,9 @@ const findStudentName = (directory, lines) => {
     }
   }
 
-  return `Author line not found (${directory})`;
+  console.log(`Author line not found (${directory})`);
+
+  return `Unknown${Math.floor(Math.random() * 100000)}`
 }
 
 module.exports = { findStudentName }

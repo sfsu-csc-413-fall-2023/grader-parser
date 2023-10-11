@@ -1,9 +1,14 @@
 const TARBALL_NAME = "assignment-2a-tests.tar";
-const TARBALL_REMOTE = `https://raw.githubusercontent.com/sfsu-csc-413-fall-2023/grader-parser/main/assignment-2a-tests.tar`;
+const TARBALL_REMOTE = `https://raw.githubusercontent.com/sfsu-csc-413-fall-2023/grader-parser/main/${TARBALL_NAME}`;
 const JUNIT_JAR_NAME = "junit-platform-console-standalone-1.9.3.jar";
 const JUNIT_JAR_REMOTE = `https://github.com/sfsu-csc-413-fall-2023/grader-parser/raw/main/lib/${JUNIT_JAR_NAME}`;
 
 const DUE_DATE = "October 15, before midnight"
+
+const SAMPLE_FILES = [
+  { path: ['parser'], name: "Parser.java" },
+  { path: ['ast', 'trees'], name: "IterationTree.java" }
+];
 
 const SOURCE_FILE = "sources.txt";
 
@@ -79,42 +84,42 @@ const TESTS = [
       {
         description: "New type keywords (2 types - binary, char)",
         fullyQualifiedTestMethod: "\"tests.parser.assignment2a.TypeTest#testTypes\(java.lang.String\)\"",
-        pointValue: 1
+        pointValue: 6
       },
       {
         description: "New relational operators (2 operators - >, >=)",
         fullyQualifiedTestMethod: "\"tests.parser.assignment2a.RelationalOperatorTest#testOperator\(java.lang.String\)\"",
-        pointValue: 1
+        pointValue: 2
       },
       {
         description: "New mathematical operators (3 operators - or, xor, and)",
         fullyQualifiedTestMethod: "\"tests.parser.assignment2a.MathematicalOperatorTest#testOperator\(java.lang.String,ast.AST\)\"",
-        pointValue: 1
+        pointValue: 3
       },
       {
         description: "If without else",
         fullyQualifiedTestMethod: "\"tests.parser.assignment2a.IfStatementTest#testIfStatement\(lexer.ILexer,java.util.List\)\"",
-        pointValue: 1
+        pointValue: 5
       },
       {
         description: "Iteration statement",
         fullyQualifiedTestMethod: "tests.parser.assignment2a.IterationStatementTest#testIterationStatement",
-        pointValue: 1
+        pointValue: 16
       },
       {
         description: "Invalid iteration statements (4 cases)",
         fullyQualifiedTestMethod: "\"tests.parser.assignment2a.IterationStatementTest#testInvalidIterationStatement\(java.lang.String\)\"",
-        pointValue: 1
+        pointValue: 8
       },
       {
         description: "Parser output test (new tokens and productions)",
         fullyQualifiedTestMethod: "tests.parser.assignment2a.ParserOutputTest#testParserOutput",
-        pointValue: 1
+        pointValue: 10
       },
       {
         description: "Parser output test (simple.x)",
         fullyQualifiedTestMethod: "tests.parser.assignment2a.ParserOutputTest#testParserOutputSimpleX",
-        pointValue: 1
+        pointValue: 4
       }
     ]
   }
@@ -123,6 +128,7 @@ const TESTS = [
 module.exports = {
   TARBALL_NAME, TARBALL_REMOTE, JUNIT_JAR_NAME, JUNIT_JAR_REMOTE,
   DUE_DATE,
+  SAMPLE_FILES,
   SOURCE_FILE,
   TESTS
 }

@@ -3,10 +3,9 @@ const { execSync } = require("child_process");
 const helpers = require("../report/md-helpers");
 const { findAllSource } = require("./command-helpers");
 const { JUNIT_JAR_NAME, SOURCE_FILE, TESTS } = require("../constants");
-const { manualTest } = require("./manual-test");
 
 /**
- * @param {Array<string>} testOutput 
+ * @param {Array<string>} testOutput
  */
 const testPointResult = (testOutput = []) => {
   const results = {};
@@ -33,9 +32,9 @@ const testPointResult = (testOutput = []) => {
 }
 
 /**
- * 
- * @param {Array<string>} output 
- * @param {string} searchString 
+ *
+ * @param {Array<string>} output
+ * @param {string} searchString
  * @param {number} defaultValue
  */
 const testResultToInt = (output, searchString, defaultValue = 0) => {
@@ -97,8 +96,6 @@ const runTests = (cwd, output) => {
   }
   execSync(`rm -rf ${path.join(cwd, SOURCE_FILE)}`)
   output.push(helpers.codeBlockEnd());
-
-  manualTest(cwd, output);
 
   let totalAssignmentPoints = 0;
   let earnedAssignmentPoints = 0;

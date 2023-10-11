@@ -2,12 +2,13 @@ const fs = require("fs");
 const path = require("path");
 const { findStudentName } = require("./find-student-name");
 const helpers = require("./md-helpers");
-const { DUE_DATE } = require("../constants");
+const { DUE_DATE, SAMPLE_FILES } = require("../constants");
 const { execSync } = require("child_process");
+const { codeSample } = require("./code-sample")
 
 /**
  * @param {string} directory repository directory
- * @param {Array<string>} output 
+ * @param {Array<string>} output
  */
 const initReport = (directory, output) => {
   const readme = fs.readFileSync(
@@ -38,14 +39,9 @@ const initReport = (directory, output) => {
   output.push(helpers.h2("Readme"));
   output.push(readme.filter(line => !(line.includes("Review Assignment Due Date") || line.includes("Open in Codespaces"))).join("\n"));
 
-  const lexerSource = fs.readFileSync(
-    path.join(directory, 'lexer', 'Lexer.java')
-  ).toString().split(/\r?\n/);
-
-  output.push(helpers.h2("Code Sample (Lexer.java)"));
-  output.push(helpers.codeBlockStart("java"));
-  output.push(lexerSource.join("\n"));
-  output.push(helpers.codeBlockEnd());
+  SAMPLE_FILES.forEach(({ path: pathArray, name }) => {
+    output.push(...codeSample(path.join(directory, ...pathArray, name), name));
+  })
 
   return studentName;
 }
