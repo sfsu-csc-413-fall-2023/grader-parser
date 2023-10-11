@@ -9,197 +9,112 @@ const SOURCE_FILE = "sources.txt";
 
 const TESTS = [
   {
-    group: "Regression Tests",
+    group: "Regression Tests (Points not awarded if assignment not attempted)",
     tests: [
       {
-        description: "Symbol#getLexeme()",
-        fullyQualifiedTestMethod: "tests.lexer.daos.SymbolRegressionTest#testGetLexeme",
-        pointValue: 1 / 2
+        description: "Assignment (1 test case)",
+        fullyQualifiedTestMethod: "tests.parser.regression.AssignmentStatementTest#testAssignmentStatement",
+        pointValue: 1
       },
       {
-        description: "Symbol#getTokenKind()",
-        fullyQualifiedTestMethod: "tests.lexer.daos.SymbolRegressionTest#testGetTokenKind",
-        pointValue: 1 / 2
+        description: "Block (1 test case)",
+        fullyQualifiedTestMethod: "tests.parser.regression.BlockTest#testStatementBeforeDeclarationThrows",
+        pointValue: 1
       },
       {
-        description: "Token#getLexeme()",
-        fullyQualifiedTestMethod: "tests.lexer.daos.TokenRegressionTest#testGetLexeme",
-        pointValue: 1 / 2
+        description: "Call (3 test cases)",
+        fullyQualifiedTestMethod: "\"tests.parser.regression.CallStatementTest#testCallStatement\(java.lang.String,java.util.List\)\"",
+        pointValue: 1
       },
       {
-        description: "Token#getTokenKind()",
-        fullyQualifiedTestMethod: "tests.lexer.daos.TokenRegressionTest#testGetTokenKind",
-        pointValue: 1 / 2
+        description: "Function declarations (3 test cases)",
+        fullyQualifiedTestMethod: "\"tests.parser.regression.FunctionDeclarationTest#testFunctionDeclaration\(java.lang.String,java.util.List\)\"",
+        pointValue: 1
       },
       {
-        description: "Token#getLeftPosition()",
-        fullyQualifiedTestMethod: "tests.lexer.daos.TokenRegressionTest#testGetLeftPosition",
-        pointValue: 1 / 2
+        description: "If/Else (1 test case)",
+        fullyQualifiedTestMethod: "tests.parser.regression.IfElseStatementTest#testIfStatement",
+        pointValue: 1
       },
       {
-        description: "Token#getRightPosition()",
-        fullyQualifiedTestMethod: "tests.lexer.daos.TokenRegressionTest#testGetRightPosition",
-        pointValue: 1 / 2
+        description: "Nested block (1 test case)",
+        fullyQualifiedTestMethod: "tests.parser.regression.NestedBlockTest#testNestedBlocks",
+        pointValue: 1
       },
       {
-        description: "Token#testPrint()",
-        fullyQualifiedTestMethod: "tests.lexer.daos.TokenRegressionTest#testTestPrint",
-        pointValue: 1 / 2
+        description: "Program (1 test case)",
+        fullyQualifiedTestMethod: "tests.parser.regression.ProgramTest#testProgram",
+        pointValue: 1
       },
       {
-        description: "SourceFileReader#readOnEmptyFile()",
-        fullyQualifiedTestMethod: "tests.lexer.readers.SourceFileReaderRegressionTest#testReadOnEmptyFile",
-        pointValue: 1 / 2
+        description: "Relational operators (4 ops - ==, !=, <, <=)",
+        fullyQualifiedTestMethod: "\"tests.parser.regression.RelationalOperatorTest#testOperator\(java.lang.String\)\"",
+        pointValue: 1
       },
       {
-        description: "SourceFileReader#readOnlyOneCharacter()",
-        fullyQualifiedTestMethod: "tests.lexer.readers.SourceFileReaderRegressionTest#testReadOnlyOneCharacter",
-        pointValue: 1 / 2
+        description: "Return (1 test case)",
+        fullyQualifiedTestMethod: "tests.parser.regression.ReturnStatementTest#returnStatementTest",
+        pointValue: 1
       },
       {
-        description: "SourceFileReader#read()",
-        fullyQualifiedTestMethod: "tests.lexer.readers.SourceFileReaderRegressionTest#testRead",
-        pointValue: 1 / 2
+        description: "Types (2 types - int, boolean)",
+        fullyQualifiedTestMethod: "\"tests.parser.regression.TypeTest#testTypes\(java.lang.String\)\"",
+        pointValue: 1
       },
       {
-        description: "SourceFileReader#readEndOfFile()",
-        fullyQualifiedTestMethod: "tests.lexer.readers.SourceFileReaderRegressionTest#testReadEndOfFile",
-        pointValue: 1 / 2
+        description: "Variable declarations (1 test case)",
+        fullyQualifiedTestMethod: "tests.parser.regression.VariableDeclarationTest#testVariableDeclaration",
+        pointValue: 1
       },
       {
-        description: "SourceFileReader#getColumnOnEmptyFile()",
-        fullyQualifiedTestMethod: "tests.lexer.readers.SourceFileReaderRegressionTest#testGetColumnOnEmptyFile",
-        pointValue: 1 / 2
-      },
-      {
-        description: "SourceFileReader#getColumn()",
-        fullyQualifiedTestMethod: "tests.lexer.readers.SourceFileReaderRegressionTest#testGetColumn",
-        pointValue: 1 / 2
-      },
-      {
-        description: "SourceFileReader#getLineNumberOnEmptyFile()",
-        fullyQualifiedTestMethod: "tests.lexer.readers.SourceFileReaderRegressionTest#testGetLineNumberOnEmptyFile",
-        pointValue: 1 / 2
-      },
-      {
-        description: "SourceFileReader#getLineNumber()",
-        fullyQualifiedTestMethod: "tests.lexer.readers.SourceFileReaderRegressionTest#testGetLineNumber",
-        pointValue: 1 / 2
-      },
-      {
-        description: "Lexer#endOfFile()",
-        fullyQualifiedTestMethod: "tests.lexer.LexerTest#testEndOfFile",
-        pointValue: 1 / 2
-      },
-      {
-        description: "Lexer#whitespaceIsIgnored()",
-        fullyQualifiedTestMethod: "tests.lexer.LexerTest#testWhitespaceIsIgnored",
-        pointValue: 1 / 2
-      },
-      {
-        description: "Lexer#builtInKeywords()",
-        fullyQualifiedTestMethod: "\"tests.lexer.LexerTest#testBuiltInOperators\(java.lang.String,lexer.daos.TokenKind,int,int\)\"",
-        pointValue: 1 / 2
-      },
-      {
-        description: "Lexer#builtInOperators()",
-        fullyQualifiedTestMethod: "\"tests.lexer.LexerTest#testBuiltInOperators\(java.lang.String,lexer.daos.TokenKind,int,int\)\"",
-        pointValue: 1 / 2
-      },
-      {
-        description: "Lexer#builtInSeparators()",
-        fullyQualifiedTestMethod: "\"tests.lexer.LexerTest#testBuiltInSeparators\(java.lang.String,lexer.daos.TokenKind,int,int\)\"",
-        pointValue: 1 / 2
-      },
-      {
-        description: "Lexer#comments()",
-        fullyQualifiedTestMethod: "tests.lexer.LexerTest#testComments",
-        pointValue: 1 / 2
-      },
-      {
-        description: "Lexer#identifiers()",
-        fullyQualifiedTestMethod: "\"tests.lexer.LexerTest#testIdentifiers\(java.lang.String,lexer.daos.TokenKind,int,int\)\"",
-        pointValue: 1 / 2
-      },
-      {
-        description: "Lexer#integers()",
-        fullyQualifiedTestMethod: "\"tests.lexer.LexerTest#testIntegers\(java.lang.String,lexer.daos.TokenKind,int,int\)\"",
-        pointValue: 1 / 2
+        description: "While (1 test case)",
+        fullyQualifiedTestMethod: "tests.parser.regression.WhileStatementTest#testWhileStatement",
+        pointValue: 1
       },
     ]
   },
   {
-    group: "Assignment 1 Tests",
+    group: "Assignment 2a Tests",
     tests: [
       {
-        description: "Token#Token(Symbol,int,int)",
-        fullyQualifiedTestMethod: "tests.assignment_1.TokenTest#testLegacyConstructor",
-        pointValue: 1 / 2
+        description: "New type keywords (2 types - binary, char)",
+        fullyQualifiedTestMethod: "\"tests.parser.assignment_2a.TypeTest#testTypes\(java.lang.String\)\"",
+        pointValue: 1
       },
       {
-        description: "Token#Token(Symbol,int,int,int)",
-        fullyQualifiedTestMethod: "tests.assignment_1.TokenTest#testNewConstructor",
-        pointValue: 2 / 2
+        description: "New relational operators (2 operators - >, >=)",
+        fullyQualifiedTestMethod: "\"tests.parser.assignment_2a.RelationalOperatorTest#testOperator\(java.lang.String\)\"",
+        pointValue: 1
       },
       {
-        description: "Token#toString()",
-        fullyQualifiedTestMethod: "tests.assignment_1.TokenTest#testTokenStringRepresentation",
-        pointValue: 4 / 2
+        description: "New mathematical operators (3 operators - or, xor, and)",
+        fullyQualifiedTestMethod: "\"tests.parser.assignment_2a.MathematicalOperatorTest#testOperator\(java.lang.String,ast.AST\)\"",
+        pointValue: 1
       },
       {
-        description: "Lexer new keywords",
-        fullyQualifiedTestMethod: "\"tests.assignment_1.LexerTest#testAssignmentOneKeywords\(java.lang.String,lexer.daos.TokenKind,int,int\)\"",
-        pointValue: 3 / 2
+        description: "If without else",
+        fullyQualifiedTestMethod: "tests.parser.assignment_2a.IfStatementTest#testIfStatement\(lexer.ILexer,java.util.List\)\"",
+        pointValue: 1
       },
       {
-        description: "Lexer new operators",
-        fullyQualifiedTestMethod: "\"tests.assignment_1.LexerTest#testAssignmentOneOperators\(java.lang.String,lexer.daos.TokenKind,int,int\)\"",
-        pointValue: 1 / 2
+        description: "Iteration statement",
+        fullyQualifiedTestMethod: "tests.parser.assignment_2a.IterationStatementTest#testIterationStatement",
+        pointValue: 1
       },
       {
-        description: "Lexer new separators",
-        fullyQualifiedTestMethod: "\"tests.assignment_1.LexerTest#testAssignmentOneSeparators\(java.lang.String,lexer.daos.TokenKind,int,int\)\"",
-        pointValue: 1 / 2
+        description: "Invalid iteration statement",
+        fullyQualifiedTestMethod: "tests.parser.assignment_2a.IterationStatementTest#testInvalidIterationStatement",
+        pointValue: 1
       },
       {
-        description: "Lexer binary literals",
-        fullyQualifiedTestMethod: "\"tests.assignment_1.LexerTest#testBinaryLiterals\(java.lang.String,lexer.daos.TokenKind,int,int\)\"",
-        pointValue: 36 / 2
+        description: "Parser output test (new tokens and productions)",
+        fullyQualifiedTestMethod: "tests.parser.assignment_2a.ParserOutputTest#testParserOutput",
+        pointValue: 1
       },
       {
-        description: "Lexer failing binary literals",
-        fullyQualifiedTestMethod: "\"tests.assignment_1.LexerTest#testFailingBinaryLiterals\(java.lang.String,java.util.List\)\"",
-        pointValue: 18 / 2
-      },
-      {
-        description: "Lexer char literals",
-        fullyQualifiedTestMethod: "\"tests.assignment_1.LexerTest#testCharLiterals\(java.lang.String,lexer.daos.TokenKind,int,int\)\"",
-        pointValue: 16 / 2
-      },
-      {
-        description: "Lexer failing char lit 1",
-        fullyQualifiedTestMethod: "tests.assignment_1.LexerTest#testFailingCharLiteralOne",
-        pointValue: 5 / 2
-      },
-      {
-        description: "Lexer failing char lit 2",
-        fullyQualifiedTestMethod: "tests.assignment_1.LexerTest#testFailingCharLiteralTwo",
-        pointValue: 5 / 2
-      },
-      {
-        description: "Lexer failing char lit 3",
-        fullyQualifiedTestMethod: "tests.assignment_1.LexerTest#testFailingCharLiteralThree",
-        pointValue: 5 / 2
-      },
-      {
-        description: "Lexer output test",
-        fullyQualifiedTestMethod: "tests.assignment_1.LexerOutputTest#testLexerOutput",
-        pointValue: 6 / 2
-      },
-      {
-        description: "Lexer output test (simple.x)",
-        fullyQualifiedTestMethod: "tests.assignment_1.LexerOutputTest#testLexerOutputSimpleX",
-        pointValue: 14 / 2
+        description: "Parser output test (simple.x)",
+        fullyQualifiedTestMethod: "tests.parser.assignment_2a.ParserOutputTest#testParserOutputSimpleX",
+        pointValue: 1
       }
     ]
   }

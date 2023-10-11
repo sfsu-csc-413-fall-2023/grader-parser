@@ -1,2 +1,8 @@
 *.class
-
+/target
+/.vscode
+/graded
+/submissions
+/reports
+/failed
+/github_submissions

@@ -16,8 +16,8 @@ const prepareDirectory = (cwd, output) => {
   output.push(execSync(findAndDelete(cwd, "*.class")).toString());
   output.push(execSync(findAndDelete(cwd, "*.jar")).toString());
   output.push(execSync(`rm -rf ${cwd}/{target,tests,lib,${TARBALL_NAME.replace(".jar", "")}*}`).toString());
-  output.push(execSync(`rm -rf ${cwd}/lexer/daos/TokenKind.java`).toString());
-  output.push(execSync(`rm -rf ${cwd}/lexer/SymbolTable.java`).toString());
+  output.push(execSync(`rm -rf ${cwd}/ast/trees`).toString());
+  output.push(execSync(`rm -rf ${cwd}/tests/helpers/visitor/TestVisitor.java`).toString());
   output.push(helpers.codeBlockEnd());
 
   output.push(helpers.p("Replacing tests and junit jar"));
@@ -33,8 +33,8 @@ const prepareDirectory = (cwd, output) => {
   output.push(helpers.p("Running tool runner"));
   output.push(helpers.codeBlockStart("sh"));
   try {
-    output.push(execSync(javaCompile(cwd, path.join('lexer', 'tools', 'ToolRunner.java'))).toString());
-    output.push(execSync(javaExecute(cwd, "lexer.tools.ToolRunner"), { cwd }).toString());
+    output.push(execSync(javaCompile(cwd, path.join('tools', 'ToolRunner.java'))).toString());
+    output.push(execSync(javaExecute(cwd, "tools.ToolRunner"), { cwd }).toString());
     output.push(helpers.codeBlockEnd());
   } catch (err) {
     output.push(err.stdout.toString());
