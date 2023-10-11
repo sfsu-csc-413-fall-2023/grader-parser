@@ -1,5 +1,5 @@
 const TARBALL_NAME = "assignment-2a-tests.tar";
-const TARBALL_REMOTE = `https://github.com/sfsu-csc-413-fall-2023/grader-parser/raw/main/${TARBALL_NAME}`;
+const TARBALL_REMOTE = `https://raw.githubusercontent.com/sfsu-csc-413-fall-2023/grader-parser/main/assignment-2a-tests.tar`;
 const JUNIT_JAR_NAME = "junit-platform-console-standalone-1.9.3.jar";
 const JUNIT_JAR_REMOTE = `https://github.com/sfsu-csc-413-fall-2023/grader-parser/raw/main/lib/${JUNIT_JAR_NAME}`;
 
@@ -78,42 +78,42 @@ const TESTS = [
     tests: [
       {
         description: "New type keywords (2 types - binary, char)",
-        fullyQualifiedTestMethod: "\"tests.parser.assignment_2a.TypeTest#testTypes\(java.lang.String\)\"",
+        fullyQualifiedTestMethod: "\"tests.parser.assignment2a.TypeTest#testTypes\(java.lang.String\)\"",
         pointValue: 1
       },
       {
         description: "New relational operators (2 operators - >, >=)",
-        fullyQualifiedTestMethod: "\"tests.parser.assignment_2a.RelationalOperatorTest#testOperator\(java.lang.String\)\"",
+        fullyQualifiedTestMethod: "\"tests.parser.assignment2a.RelationalOperatorTest#testOperator\(java.lang.String\)\"",
         pointValue: 1
       },
       {
         description: "New mathematical operators (3 operators - or, xor, and)",
-        fullyQualifiedTestMethod: "\"tests.parser.assignment_2a.MathematicalOperatorTest#testOperator\(java.lang.String,ast.AST\)\"",
+        fullyQualifiedTestMethod: "\"tests.parser.assignment2a.MathematicalOperatorTest#testOperator\(java.lang.String,ast.AST\)\"",
         pointValue: 1
       },
       {
         description: "If without else",
-        fullyQualifiedTestMethod: "tests.parser.assignment_2a.IfStatementTest#testIfStatement\(lexer.ILexer,java.util.List\)\"",
+        fullyQualifiedTestMethod: "\"tests.parser.assignment2a.IfStatementTest#testIfStatement\(lexer.ILexer,java.util.List\)\"",
         pointValue: 1
       },
       {
         description: "Iteration statement",
-        fullyQualifiedTestMethod: "tests.parser.assignment_2a.IterationStatementTest#testIterationStatement",
+        fullyQualifiedTestMethod: "tests.parser.assignment2a.IterationStatementTest#testIterationStatement",
         pointValue: 1
       },
       {
-        description: "Invalid iteration statement",
-        fullyQualifiedTestMethod: "tests.parser.assignment_2a.IterationStatementTest#testInvalidIterationStatement",
+        description: "Invalid iteration statements (4 cases)",
+        fullyQualifiedTestMethod: "\"tests.parser.assignment2a.IterationStatementTest#testInvalidIterationStatement\(java.lang.String\)\"",
         pointValue: 1
       },
       {
         description: "Parser output test (new tokens and productions)",
-        fullyQualifiedTestMethod: "tests.parser.assignment_2a.ParserOutputTest#testParserOutput",
+        fullyQualifiedTestMethod: "tests.parser.assignment2a.ParserOutputTest#testParserOutput",
         pointValue: 1
       },
       {
         description: "Parser output test (simple.x)",
-        fullyQualifiedTestMethod: "tests.parser.assignment_2a.ParserOutputTest#testParserOutputSimpleX",
+        fullyQualifiedTestMethod: "tests.parser.assignment2a.ParserOutputTest#testParserOutputSimpleX",
         pointValue: 1
       }
     ]
