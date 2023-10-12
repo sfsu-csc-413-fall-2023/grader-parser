@@ -14,6 +14,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ast.AST;
 import compiler.Compiler;
 
 public class ParserOutputTest {
@@ -23,6 +24,7 @@ public class ParserOutputTest {
 
   @BeforeEach
   public void setUp() {
+    AST.NodeCounter = 0;
     System.setOut(new PrintStream(outputStreamCaptor));
   }
 
