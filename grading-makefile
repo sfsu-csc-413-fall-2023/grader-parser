@@ -1,0 +1,39 @@
+# rm makefile; wget -q https://raw.githubusercontent.com/sfsu-csc-413-fall-2023/template-grader/main/grading-makefile
+
+COMPILE_DIR=target
+SRC_DIR=.
+SOURCE_FILE=sources
+JUNIT_JAR=junit-platform-console-standalone-1.9.3.jar
+TEST_TAR=assignment-2a-tests.tar
+ASSIGNMENT_GRADER=https://raw.githubusercontent.com/sfsu-csc-413-fall-2023/grader-parser/main/
+
+clean:
+	@echo "Cleaning..."
+	@rm -rf lib
+	@rm -rf tests
+	@rm -rf ast/trees
+	@rm -rf visitor/TreeVisitor.java
+	@find . -name "*.class" -type f -delete
+	@find . -name "*.jar" -type f -delete
+	@find . -name "*.tar" -type f -delete
+	@rm -rf $(COMPILE_DIR)
+
+copy-files: clean
+	@echo "Copying files..."
+	@wget -q $(ASSIGNMENT_GRADER)lib/$(JUNIT_JAR)
+	@mkdir lib
+	@mv $(JUNIT_JAR) lib/$(JUNIT_JAR)
+	@wget -q $(ASSIGNMENT_GRADER)$(TEST_TAR)
+	@tar -xvf $(TEST_TAR)
+	@rm $(TEST_TAR)
+
+compile: copy-files
+	@echo "Compiling all source..."
+	@javac -d $(COMPILE_DIR) tools/ToolRunner.java
+	@java -cp $(COMPILE_DIR) tools.ToolRunner
+	@find . -name "*.java" > $(SOURCE_FILE)
+	@javac -d $(COMPILE_DIR) -cp $(COMPILE_DIR):lib/$(JUNIT_JAR):. @$(SOURCE_FILE)
+	@rm $(SOURCE_FILE)
+
+test-method: compile
+	java -jar lib/$(JUNIT_JAR) -cp $(COMPILE_DIR) -m $(FQ_METHOD_NAME)
